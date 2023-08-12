@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SEN371_Project.Util;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -8,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Twilio.Types;
 
 namespace SEN371_Project
 {
@@ -36,39 +38,41 @@ namespace SEN371_Project
             string endDate = dtpEndDate.Value.ToString();
 
 
+            string clientPhoneNum = GetClient.PhoneNum(ClientID.ToString());
+
+            if (!clientPhoneNum.Equals(""))
+            {
+
+                SQLiteConnection conn = new SQLiteConnection(@"data source=..\..\Database\Premier_SQLite_Final.db");
+                conn.Open();
+
+                string query = "INSERT INTO JobDetails (JobID, EmployeeID, EquipmentDetails, JobDescription, Location, StartDate, EndDate, ExpectedTime, PossibleSlackTime, ClientID)" +
+                               "VALUES (" + RandomJobID + "," + employeeID + ",'" + equipmentDetails + "','" + jobDescription + "','" + clientAddress + "','" + startTime + "','" + endDate + "'," + expectedTime + "," + SlackTime + "," + ClientID + ")";
+
+                //Initialize the SqliteCommand
+                var SqliteCmd = new SQLiteCommand();
+
+                //Create the SqliteCommand
+                SqliteCmd = conn.CreateCommand();
+
+                //Assigning the query to CommandText
+                SqliteCmd.CommandText = query;
+
+                //Execute the SqliteCommand
+                SqliteCmd.ExecuteNonQuery();
+                conn.Close();
+
+                API_handler.sendMessage(RandomJobID.ToString(), ClientID.ToString(), startTime, clientPhoneNum);
+                MessageBox.Show("Job was successfully added", "Successfull");
+
+                Jobs Form = new Jobs();
+                this.Hide();
+                Form.ShowDialog();
+                this.Close();
+            }
+            
 
 
-            // Create an instance of JobLog class with the user input
-          //  JobLog job = new JobLog(clientName, clientSurname, equipmentDetails, jobDescription, clientPhoneNumber, clientZipCode, expectedTime, clientAddress, location, startTime, endDate);
-
-
-            SQLiteConnection conn = new SQLiteConnection(@"data source=..\..\Database\Premier_SQLite_Final.db");
-            conn.Open();
-
-            // INSERT INTO _StudyInfo"+"(Param,Val)"+"Values('Name','" + snbox.Text + "')";//insert the studyinfo into Db
-            string query = "INSERT INTO JobDetails (JobID, EmployeeID, EquipmentDetails, JobDescription, Location, StartDate, EndDate, ExpectedTime, PossibleSlackTime, ClientID)" +
-                           "VALUES ("+ RandomJobID + ","+ employeeID+ ",'"+equipmentDetails+ "','"+jobDescription+ "','"+ clientAddress + "','"+startTime+ "','"+endDate+ "',"+expectedTime+ ","+ SlackTime + ","+ ClientID + ")";
-
-            //Initialize the SqliteCommand
-            var SqliteCmd = new SQLiteCommand();
-
-            //Create the SqliteCommand
-            SqliteCmd = conn.CreateCommand();
-
-            //Assigning the query to CommandText
-            SqliteCmd.CommandText = query;
-
-            //Execute the SqliteCommand
-            SqliteCmd.ExecuteNonQuery();
-            conn.Close();
-
-            API_handler.sendMessage(RandomJobID.ToString(), ClientID.ToString(), startTime);
-            MessageBox.Show("Job was successfully added", "Successfull");
-
-            Jobs Form = new Jobs();
-            this.Hide();
-            Form.ShowDialog();
-            this.Close();
 
 
         }

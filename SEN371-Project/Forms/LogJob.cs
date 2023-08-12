@@ -38,9 +38,9 @@ namespace SEN371_Project
             string endDate = dtpEndDate.Value.ToString();
 
 
-            string clientPhoneNum = GetClient.PhoneNum(ClientID.ToString());
+            string EmployeePhoneNum = GetEmployee.PhoneNum(ClientID.ToString());
 
-            if (!clientPhoneNum.Equals(""))
+            if (!EmployeePhoneNum.Equals(""))
             {
 
                 SQLiteConnection conn = new SQLiteConnection(@"data source=..\..\Database\Premier_SQLite_Final.db");
@@ -62,7 +62,7 @@ namespace SEN371_Project
                 SqliteCmd.ExecuteNonQuery();
                 conn.Close();
 
-                API_handler.sendMessage(RandomJobID.ToString(), ClientID.ToString(), startTime, clientPhoneNum);
+                API_handler.sendMessageEmployee(RandomJobID.ToString(), ClientID.ToString(), startTime, EmployeePhoneNum);
                 MessageBox.Show("Job was successfully added", "Successfull");
 
                 Jobs Form = new Jobs();

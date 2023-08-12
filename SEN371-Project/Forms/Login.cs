@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SEN371_Project.Util;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -43,7 +44,7 @@ namespace SEN371_Project
            */
             
             //Validation Checking
-            if (Validate(username,password))
+            if (LoginValidation.Validate(username,password))
             {
                 optionScreen options = new optionScreen();
                 this.Hide();
@@ -57,35 +58,14 @@ namespace SEN371_Project
             }
         }
 
-        public Boolean Validate(String Username, String Password)
+        private void label3_Click(object sender, EventArgs e)
         {
-            SQLiteConnection conn = new SQLiteConnection(@"data source=..\..\Database\Premier_SQLite_Final.db");
 
-
-            using (var cmd = new SQLiteCommand(conn))
-            {
-                using (var command = new SQLiteCommand(conn))
-                {
-                    conn.Open();
-                    command.CommandText = "SELECT * FROM Login";
-                    using (var reader = command.ExecuteReader())
-                    {
-                        while (reader.Read())
-                        {
-                            String user = reader["Username"].ToString();
-                            String pass = reader["Password"].ToString();
-
-                            if ((user.Equals(Username)) && (pass.Equals(Password)))
-                            { 
-                                return true;
-                            }
-                        }
-                    }
-                    conn.Close();
-                }
-            }
-            return false;
         }
 
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

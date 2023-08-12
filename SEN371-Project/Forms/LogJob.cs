@@ -23,11 +23,10 @@ namespace SEN371_Project
         private void btnSubmit_Click(object sender, EventArgs e)
         {
 
-
+            //Get data from FORM
             Random rnd = new Random();
             int RandomJobID = rnd.Next(100, 1000);
-            int SlackTime = Int32.Parse(txtSlack.Text);
-            
+            int SlackTime = Int32.Parse(txtSlack.Text);           
             int ClientID = Int32.Parse(txtClientID.Text);
             int employeeID = Int32.Parse(txtEmployeeID.Text);
             string equipmentDetails = txtEquipmentDetails.Text;
@@ -38,32 +37,26 @@ namespace SEN371_Project
             string endDate = dtpEndDate.Value.ToString();
 
 
+            //Get phone numbers from database tables.
+            string ClientPhoneNum = GetClient.PhoneNum(ClientID.ToString());
             string EmployeePhoneNum = GetEmployee.PhoneNum(employeeID.ToString());
 
-            if (!EmployeePhoneNum.Equals(""))
-            {
-                SQLiteConnection conn = new SQLiteConnection(@"data source=..\..\Database\Premier_SQLite_Final.db");
-                conn.Open();
 
+            if (!(EmployeePhoneNum.Equals("")) && !(ClientPhoneNum.Equals("")))
+            {
+                
                 string query = "INSERT INTO JobDetails (JobID, EmployeeID, EquipmentDetails, JobDescription, Location, StartDate, EndDate, ExpectedTime, PossibleSlackTime, ClientID)" +
                                "VALUES (" + RandomJobID + "," + employeeID + ",'" + equipmentDetails + "','" + jobDescription + "','" + clientAddress + "','" + startTime + "','" + endDate + "'," + expectedTime + "," + SlackTime + "," + ClientID + ")";
 
-                //Initialize the SqliteCommand
-                var SqliteCmd = new SQLiteCommand();
+                //Send query to database handler
+                Database_handler.Insert(query);
 
-                //Create the SqliteCommand
-                SqliteCmd = conn.CreateCommand();
-
-                //Assigning the query to CommandText
-                SqliteCmd.CommandText = query;
-
-                //Execute the SqliteCommand
-                SqliteCmd.ExecuteNonQuery();
-                conn.Close();
-
+                //Request to send messages to client and employee
+                API_handler.sendMessageClient(RandomJobID.ToString(), startTime, ClientPhoneNum);
                 API_handler.sendMessageEmployee(RandomJobID.ToString(), ClientID.ToString(), startTime, EmployeePhoneNum);
-                MessageBox.Show("Job was successfully added", "Successfull");
 
+
+                MessageBox.Show("Job was successfully added", "Successfull");
                 Jobs Form = new Jobs();
                 this.Hide();
                 Form.ShowDialog();

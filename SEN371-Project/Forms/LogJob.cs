@@ -23,21 +23,15 @@ namespace SEN371_Project
 
 
             Random rnd = new Random();
-            int RandomID = rnd.Next(100, 1000);
-            int employeeID = 321;
-            int SlackTime = 1;
-            int ClientID = 123;
+            int RandomJobID = rnd.Next(100, 1000);
+            int SlackTime = Int32.Parse(txtSlack.Text);
             
-
-            string clientName = txtName.Text;
-            string clientSurname = txtSurname.Text;
+            int ClientID = Int32.Parse(txtClientID.Text);
+            int employeeID = Int32.Parse(txtEmployeeID.Text);
             string equipmentDetails = txtEquipmentDetails.Text;
             string jobDescription = txtDescription.Text;
-            string clientPhoneNumber = txtNumber.Text;
-            string clientZipCode = txtZipCode.Text;
             int expectedTime = int.Parse(txtExpected.Text);
             string clientAddress = txtAdress.Text;
-            string location = txtLocation.Text;
             string startTime = dtpStartDate.Value.ToString();
             string endDate = dtpEndDate.Value.ToString();
 
@@ -53,7 +47,7 @@ namespace SEN371_Project
 
             // INSERT INTO _StudyInfo"+"(Param,Val)"+"Values('Name','" + snbox.Text + "')";//insert the studyinfo into Db
             string query = "INSERT INTO JobDetails (JobID, EmployeeID, EquipmentDetails, JobDescription, Location, StartDate, EndDate, ExpectedTime, PossibleSlackTime, ClientID)" +
-                           "VALUES ("+RandomID+","+ employeeID+ ",'"+equipmentDetails+ "','"+jobDescription+ "','"+location+ "','"+startTime+ "','"+endDate+ "',"+expectedTime+ ","+ SlackTime + ","+ ClientID + ")";
+                           "VALUES ("+ RandomJobID + ","+ employeeID+ ",'"+equipmentDetails+ "','"+jobDescription+ "','"+ clientAddress + "','"+startTime+ "','"+endDate+ "',"+expectedTime+ ","+ SlackTime + ","+ ClientID + ")";
 
             //Initialize the SqliteCommand
             var SqliteCmd = new SQLiteCommand();
@@ -67,6 +61,8 @@ namespace SEN371_Project
             //Execute the SqliteCommand
             SqliteCmd.ExecuteNonQuery();
             conn.Close();
+
+            API_handler.sendMessage(RandomJobID.ToString(), ClientID.ToString(), startTime);
             MessageBox.Show("Job was successfully added", "Successfull");
 
             Jobs Form = new Jobs();

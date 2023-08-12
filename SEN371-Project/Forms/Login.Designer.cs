@@ -38,7 +38,7 @@
             // loginBut
             // 
             this.loginBut.Location = new System.Drawing.Point(82, 139);
-            this.loginBut.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.loginBut.Margin = new System.Windows.Forms.Padding(2);
             this.loginBut.Name = "loginBut";
             this.loginBut.Size = new System.Drawing.Size(122, 51);
             this.loginBut.TabIndex = 0;
@@ -49,7 +49,7 @@
             // txtUsername
             // 
             this.txtUsername.Location = new System.Drawing.Point(135, 48);
-            this.txtUsername.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtUsername.Margin = new System.Windows.Forms.Padding(2);
             this.txtUsername.Name = "txtUsername";
             this.txtUsername.Size = new System.Drawing.Size(132, 20);
             this.txtUsername.TabIndex = 1;
@@ -57,7 +57,7 @@
             // txtPassword
             // 
             this.txtPassword.Location = new System.Drawing.Point(135, 89);
-            this.txtPassword.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtPassword.Margin = new System.Windows.Forms.Padding(2);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(132, 20);
             this.txtPassword.TabIndex = 2;
@@ -92,7 +92,7 @@
             this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.txtUsername);
             this.Controls.Add(this.loginBut);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Login";
             this.Text = "Login";
             this.Load += new System.EventHandler(this.Form1_Load);

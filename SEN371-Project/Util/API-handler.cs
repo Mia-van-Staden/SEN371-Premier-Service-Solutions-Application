@@ -52,15 +52,15 @@ namespace SEN371_Project
                 TwilioClient.Init(accountSid, authToken);
 
                 var message = MessageResource.Create(
-                    body: string.Format("\n\nYou have been scheduled \nJobID: {0}\nClient: {1}\nDate: {2}}", JobID, ClientID, Date),
-                    from: new Twilio.Types.PhoneNumber("INSER YOUR TWILIO NUMBER HERE"),
+                    body: string.Format("\n\nYou have been scheduled \nJobID: {0}\nClient: {1}\nDate: {2}", JobID, ClientID, Date),
+                    from: new Twilio.Types.PhoneNumber("INSERT_TWILIO_PROVIDED_NUMBER_HERE"),
                     to: new Twilio.Types.PhoneNumber(EmployeePhone)
                 );
 
             }
             catch (Exception e)
             {
-                MessageBox.Show(e.Message.ToString(), "Error");
+                MessageBox.Show(e.ToString(), "Error");
             }
 
         }

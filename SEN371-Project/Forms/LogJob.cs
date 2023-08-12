@@ -38,11 +38,10 @@ namespace SEN371_Project
             string endDate = dtpEndDate.Value.ToString();
 
 
-            string EmployeePhoneNum = GetEmployee.PhoneNum(ClientID.ToString());
+            string EmployeePhoneNum = GetEmployee.PhoneNum(employeeID.ToString());
 
             if (!EmployeePhoneNum.Equals(""))
             {
-
                 SQLiteConnection conn = new SQLiteConnection(@"data source=..\..\Database\Premier_SQLite_Final.db");
                 conn.Open();
 
@@ -70,6 +69,9 @@ namespace SEN371_Project
                 Form.ShowDialog();
                 this.Close();
             }
+            else {
+                MessageBox.Show("Number is invalid", "Failed");
+            }
             
 
 
@@ -84,5 +86,8 @@ namespace SEN371_Project
             Form.ShowDialog();
             this.Close();
         }
+
+
     }
 }
+

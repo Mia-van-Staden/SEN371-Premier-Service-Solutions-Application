@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SEN371_Project.Util;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -20,7 +21,7 @@ namespace SEN371_Project
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            string employeeName = "Example text"; 
+           /* string employeeName = "Example text"; 
             string employeeSurname = "Example text"; 
             string equipmentDetails = "Example text"; 
             string jobDescription = "Example text"; 
@@ -28,7 +29,7 @@ namespace SEN371_Project
             int activeTime = 1;
             bool onTime = false;
 
-            JobsProgresscs jobs = new JobsProgresscs(employeeName,employeeSurname,equipmentDetails,jobDescription,location,activeTime,onTime);
+            JobsProgresscs jobs = new JobsProgresscs(employeeName,employeeSurname,equipmentDetails,jobDescription,location,activeTime,onTime);*/
         }
 
         private void btnBack_Click(object sender, EventArgs e)
@@ -41,20 +42,9 @@ namespace SEN371_Project
 
         private void Progress_Load(object sender, EventArgs e)
         {
-            SQLiteConnection conn = new SQLiteConnection(@"data source=..\..\Database\Premier_SQLite_Final.db");
-            conn.Open();
             string query = "SELECT * from JobsInProgress";
-            SQLiteCommand cmd = new SQLiteCommand(query, conn);
-
-            //Used to store data in gridview
-            DataTable dt = new DataTable();
-
-            //This will get the data from the database using the cmd and store it in our dt object
-            SQLiteDataAdapter adapter = new SQLiteDataAdapter(cmd);
-            adapter.Fill(dt);
-
+            DataTable dt = Database_handler.AdaptSelect(query);
             dataGridView1.DataSource = dt;
-            conn.Close();
         }
     }
 }

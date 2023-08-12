@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SEN371_Project.Util;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -29,20 +30,14 @@ namespace SEN371_Project.Forms
 
         private void EmployeeDetailsForm_Load(object sender, EventArgs e)
         {
-            SQLiteConnection conn = new SQLiteConnection(@"data source=..\..\Database\Premier_SQLite_Final.db");
-            conn.Open();
+          
             string query = "SELECT * from EmployeeDetails";
-            SQLiteCommand cmd = new SQLiteCommand(query, conn);
-
-            //Used to store data in gridview
-            DataTable dt = new DataTable();
-
-            //This will get the data from the database using the cmd and store it in our dt object
-            SQLiteDataAdapter adapter = new SQLiteDataAdapter(cmd);
-            adapter.Fill(dt);
-
+            DataTable dt = Database_handler.AdaptSelect(query);
             dataGridView1.DataSource = dt;
-            conn.Close();
+
         }
+
+
+
     }
 }

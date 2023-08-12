@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SEN371_Project.Util;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -20,7 +21,7 @@ namespace SEN371_Project
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            string clientName = "Example text";
+            /*string clientName = "Example text";
             string clientSurname = "Example text";
             int clientPhoneNumber = 1;
             string location = "Example text";
@@ -28,7 +29,7 @@ namespace SEN371_Project
 
 
             //Replace values with database stuff
-            CallHistory history = new CallHistory(clientName, clientSurname, clientPhoneNumber, location, jobDescription);
+            CallHistory history = new CallHistory(clientName, clientSurname, clientPhoneNumber, location, jobDescription);*/
         }
 
         private void btnBack_Click(object sender, EventArgs e)
@@ -41,20 +42,9 @@ namespace SEN371_Project
 
         private void HistoryCall_Load(object sender, EventArgs e)
         {
-            SQLiteConnection conn = new SQLiteConnection(@"data source=..\..\Database\Premier_SQLite_Final.db");
-            conn.Open();
             string query = "SELECT * from CallLogDetails";
-            SQLiteCommand cmd = new SQLiteCommand(query, conn);
-
-            //Used to store data in gridview
-            DataTable dt = new DataTable();
-
-            //This will get the data from the database using the cmd and store it in our dt object
-            SQLiteDataAdapter adapter = new SQLiteDataAdapter(cmd);
-            adapter.Fill(dt);
-
+            DataTable dt = Database_handler.AdaptSelect(query);
             dataGridView1.DataSource = dt;
-            conn.Close();
         }
     }
 }

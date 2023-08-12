@@ -30,6 +30,7 @@ namespace SEN371_Project.Util
 
                             if ((user.Equals(Username)) && (pass.Equals(Password)))
                             {
+                                conn.Close();
                                 return true;
                             }
                         }

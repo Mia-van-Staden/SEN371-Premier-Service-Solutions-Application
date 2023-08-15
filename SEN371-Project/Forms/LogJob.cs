@@ -39,6 +39,8 @@ namespace SEN371_Project
 
             //Get phone numbers from database tables.
             string ClientPhoneNum = GetClient.PhoneNum(ClientID.ToString());
+
+
             string EmployeePhoneNum = GetEmployee.PhoneNum(employeeID.ToString());
 
 
@@ -52,6 +54,8 @@ namespace SEN371_Project
                 Database_handler.Insert(query);
 
                 //Request to send messages to client and employee
+
+
                 API_handler.sendMessageClient(RandomJobID.ToString(), startTime, ClientPhoneNum);
                 API_handler.sendMessageEmployee(RandomJobID.ToString(), ClientID.ToString(), startTime, EmployeePhoneNum);
 
@@ -80,7 +84,10 @@ namespace SEN371_Project
             this.Close();
         }
 
+        private void LogJob_Load(object sender, EventArgs e)
+        {
 
+        }
     }
 }
 

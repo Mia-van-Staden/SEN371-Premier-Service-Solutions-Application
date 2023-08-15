@@ -53,5 +53,40 @@ namespace SEN371_Project.Util
 
         }
 
+        public static string[] Select(string EmpID)
+        {
+            SQLiteConnection conn = new SQLiteConnection(@"data source=..\..\Database\Premier_SQLite_Final.db");
+            String[] Arr = {"","","","",""};
+
+            using (var cmd = new SQLiteCommand(conn))
+            {
+                using (var command = new SQLiteCommand(conn))
+                {
+                    conn.Open();
+                    command.CommandText = "SELECT * FROM EmployeePerformance";
+                    using (var reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            string ID = reader["EmployeeNumber"].ToString();
+
+                            if ((ID.Equals(EmpID)))
+                            {
+                                Arr[0] = reader["EmployeeNumber"].ToString();
+                                Arr[1] = reader["EmployeeName"].ToString();
+                                Arr[2] = reader["EmployeeSurname"].ToString();
+                                Arr[3] = reader["PerformanceRating"].ToString();
+                                Arr[4] = reader["JobDescription"].ToString();
+                                conn.Close();
+                                return Arr;
+                            }
+                        }
+                    }
+                    conn.Close();
+                }
+            }
+            return Arr;
+        }
+
     }
 }

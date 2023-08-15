@@ -42,7 +42,7 @@ namespace SEN371_Project
 
         private void Progress_Load(object sender, EventArgs e)
         {
-            string query = "SELECT * from JobsInProgress";
+            string query = "SELECT * from JobDetails";
             DataTable dt = Database_handler.AdaptSelect(query);
             dataGridView1.DataSource = dt;
         }

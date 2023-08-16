@@ -45,6 +45,24 @@
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
+    <Reference Include="Google.Apis, Version=1.61.0.0, Culture=neutral, PublicKeyToken=4b01fa6e34db77ab, processorArchitecture=MSIL">
+      <HintPath>packages\Google.Apis.1.61.0\lib\net45\Google.Apis.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Apis.Auth, Version=1.61.0.0, Culture=neutral, PublicKeyToken=4b01fa6e34db77ab, processorArchitecture=MSIL">
+      <HintPath>packages\Google.Apis.Auth.1.61.0\lib\net461\Google.Apis.Auth.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Apis.Auth.PlatformServices, Version=1.61.0.0, Culture=neutral, PublicKeyToken=4b01fa6e34db77ab, processorArchitecture=MSIL">
+      <HintPath>packages\Google.Apis.Auth.1.61.0\lib\net461\Google.Apis.Auth.PlatformServices.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Apis.Core, Version=1.61.0.0, Culture=neutral, PublicKeyToken=4b01fa6e34db77ab, processorArchitecture=MSIL">
+      <HintPath>packages\Google.Apis.Core.1.61.0\lib\net45\Google.Apis.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Apis.Drive.v3, Version=1.61.0.3120, Culture=neutral, PublicKeyToken=4b01fa6e34db77ab, processorArchitecture=MSIL">
+      <HintPath>packages\Google.Apis.Drive.v3.1.61.0.3120\lib\net45\Google.Apis.Drive.v3.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Apis.PlatformServices, Version=1.61.0.0, Culture=neutral, PublicKeyToken=4b01fa6e34db77ab, processorArchitecture=MSIL">
+      <HintPath>packages\Google.Apis.1.61.0\lib\net45\Google.Apis.PlatformServices.dll</HintPath>
+    </Reference>
     <Reference Include="LiveCharts, Version=0.9.7.0, Culture=neutral, PublicKeyToken=0bc1f845d1ebb8df, processorArchitecture=MSIL">
       <HintPath>packages\LiveCharts.0.9.7\lib\net45\LiveCharts.dll</HintPath>
     </Reference>
@@ -63,11 +81,12 @@
     <Reference Include="Microsoft.IdentityModel.Tokens, Version=5.1.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>packages\Microsoft.IdentityModel.Tokens.5.1.2\lib\net451\Microsoft.IdentityModel.Tokens.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="MimeKit, Version=4.1.0.0, Culture=neutral, PublicKeyToken=bede1c8a46c66814, processorArchitecture=MSIL">
       <HintPath>packages\MimeKit.4.1.0\lib\net47\MimeKit.dll</HintPath>
     </Reference>
     <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>packages\Newtonsoft.Json.13.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <HintPath>packages\Newtonsoft.Json.13.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
@@ -127,98 +146,122 @@
     <Reference Include="WindowsFormsIntegration" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Forms\SLA.cs">
+    <Compile Include="Forms\Insert\AddClient.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\SLA.Designer.cs">
+    <Compile Include="Forms\Insert\AddClient.Designer.cs">
+      <DependentUpon>AddClient.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Insert\AddEmployee.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Insert\AddEmployee.Designer.cs">
+      <DependentUpon>AddEmployee.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Update\UpdateJob.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Update\UpdateJob.Designer.cs">
+      <DependentUpon>UpdateJob.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\View\Caller.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\View\Caller.Designer.cs">
+      <DependentUpon>Caller.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\View\SLA.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\View\SLA.Designer.cs">
       <DependentUpon>SLA.cs</DependentUpon>
     </Compile>
     <Compile Include="Util\API-handler.cs" />
-    <Compile Include="Forms\EmployeeDetailsForm.cs">
+    <Compile Include="Forms\View\EmployeeDetailsForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\EmployeeDetailsForm.Designer.cs">
+    <Compile Include="Forms\View\EmployeeDetailsForm.Designer.cs">
       <DependentUpon>EmployeeDetailsForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\EmployeePerformanceForm.cs">
+    <Compile Include="Forms\View\EmployeePerformanceForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\EmployeePerformanceForm.Designer.cs">
+    <Compile Include="Forms\View\EmployeePerformanceForm.Designer.cs">
       <DependentUpon>EmployeePerformanceForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Schemas\CallHistory.cs" />
-    <Compile Include="Forms\ClientDetails.cs">
+    <Compile Include="Forms\View\ClientDetails.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\ClientDetails.Designer.cs">
+    <Compile Include="Forms\View\ClientDetails.Designer.cs">
       <DependentUpon>ClientDetails.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Clients.cs">
+    <Compile Include="Forms\Menu\Clients.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Clients.Designer.cs">
+    <Compile Include="Forms\Menu\Clients.Designer.cs">
       <DependentUpon>Clients.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Details.cs">
+    <Compile Include="Forms\View\Details.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Details.Designer.cs">
+    <Compile Include="Forms\View\Details.Designer.cs">
       <DependentUpon>Details.cs</DependentUpon>
     </Compile>
     <Compile Include="Schemas\DetailsClient.cs" />
     <Compile Include="Schemas\employeeDetails.cs" />
-    <Compile Include="Forms\Employess.cs">
+    <Compile Include="Forms\Menu\Employess.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Employess.Designer.cs">
+    <Compile Include="Forms\Menu\Employess.Designer.cs">
       <DependentUpon>Employess.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Login.cs">
+    <Compile Include="Forms\View\Login.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Login.Designer.cs">
+    <Compile Include="Forms\View\Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\HistoryCall.cs">
+    <Compile Include="Forms\View\HistoryCall.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\HistoryCall.Designer.cs">
+    <Compile Include="Forms\View\HistoryCall.Designer.cs">
       <DependentUpon>HistoryCall.cs</DependentUpon>
     </Compile>
     <Compile Include="Schemas\HistoryJob.cs" />
     <Compile Include="Schemas\JobDetails.cs" />
-    <Compile Include="Forms\JobHistory.cs">
+    <Compile Include="Forms\View\JobHistory.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\JobHistory.Designer.cs">
+    <Compile Include="Forms\View\JobHistory.Designer.cs">
       <DependentUpon>JobHistory.cs</DependentUpon>
     </Compile>
     <Compile Include="Schemas\JobLog.cs" />
-    <Compile Include="Forms\Jobs.cs">
+    <Compile Include="Forms\Menu\Jobs.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Jobs.Designer.cs">
+    <Compile Include="Forms\Menu\Jobs.Designer.cs">
       <DependentUpon>Jobs.cs</DependentUpon>
     </Compile>
     <Compile Include="Schemas\JobsProgresscs.cs" />
-    <Compile Include="Forms\LogJob.cs">
+    <Compile Include="Forms\Insert\LogJob.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\LogJob.Designer.cs">
+    <Compile Include="Forms\Insert\LogJob.Designer.cs">
       <DependentUpon>LogJob.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\optionScreen.cs">
+    <Compile Include="Forms\Menu\optionScreen.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\optionScreen.Designer.cs">
+    <Compile Include="Forms\Menu\optionScreen.Designer.cs">
       <DependentUpon>optionScreen.cs</DependentUpon>
     </Compile>
     <Compile Include="Schemas\PerformanceRating.cs" />
     <Compile Include="Program.cs" />
-    <Compile Include="Forms\Progress.cs">
+    <Compile Include="Forms\View\Progress.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Progress.Designer.cs">
+    <Compile Include="Forms\View\Progress.Designer.cs">
       <DependentUpon>Progress.cs</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -227,46 +270,58 @@
     <Compile Include="Util\GetClient.cs" />
     <Compile Include="Util\GetEmployee.cs" />
     <Compile Include="Util\LoginValidation.cs" />
-    <EmbeddedResource Include="Forms\ClientDetails.resx">
+    <EmbeddedResource Include="Forms\Insert\AddClient.resx">
+      <DependentUpon>AddClient.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Insert\AddEmployee.resx">
+      <DependentUpon>AddEmployee.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Update\UpdateJob.resx">
+      <DependentUpon>UpdateJob.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\View\Caller.resx">
+      <DependentUpon>Caller.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\View\ClientDetails.resx">
       <DependentUpon>ClientDetails.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Clients.resx">
+    <EmbeddedResource Include="Forms\Menu\Clients.resx">
       <DependentUpon>Clients.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Details.resx">
+    <EmbeddedResource Include="Forms\View\Details.resx">
       <DependentUpon>Details.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\EmployeeDetailsForm.resx">
+    <EmbeddedResource Include="Forms\View\EmployeeDetailsForm.resx">
       <DependentUpon>EmployeeDetailsForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\EmployeePerformanceForm.resx">
+    <EmbeddedResource Include="Forms\View\EmployeePerformanceForm.resx">
       <DependentUpon>EmployeePerformanceForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Employess.resx">
+    <EmbeddedResource Include="Forms\Menu\Employess.resx">
       <DependentUpon>Employess.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Login.resx">
+    <EmbeddedResource Include="Forms\View\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\HistoryCall.resx">
+    <EmbeddedResource Include="Forms\View\HistoryCall.resx">
       <DependentUpon>HistoryCall.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\JobHistory.resx">
+    <EmbeddedResource Include="Forms\View\JobHistory.resx">
       <DependentUpon>JobHistory.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Jobs.resx">
+    <EmbeddedResource Include="Forms\Menu\Jobs.resx">
       <DependentUpon>Jobs.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\LogJob.resx">
+    <EmbeddedResource Include="Forms\Insert\LogJob.resx">
       <DependentUpon>LogJob.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\optionScreen.resx">
+    <EmbeddedResource Include="Forms\Menu\optionScreen.resx">
       <DependentUpon>optionScreen.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Progress.resx">
+    <EmbeddedResource Include="Forms\View\Progress.resx">
       <DependentUpon>Progress.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\SLA.resx">
+    <EmbeddedResource Include="Forms\View\SLA.resx">
       <DependentUpon>SLA.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">

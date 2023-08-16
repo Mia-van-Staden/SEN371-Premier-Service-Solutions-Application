@@ -20,9 +20,9 @@ namespace SEN371_Project
     {
 
         
-        private static string accountSid = "AC6c4b51395cba5e9e13d2bf434836a67d";
-        private static string authToken = "3a1289bb592f3eb23754827da7b76886";
-        private static string TwilioNumber = "+18147040246";
+        private static string accountSid = "";
+        private static string authToken = "";
+        private static string TwilioNumber = "";
         public static void sendMessageClient(string JobID, string Date, string ClientPhone)
         {
             try

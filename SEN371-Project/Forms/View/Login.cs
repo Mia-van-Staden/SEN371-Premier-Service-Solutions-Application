@@ -34,33 +34,30 @@ namespace SEN371_Project
             string username = txtUsername.Text;
             string password = txtPassword.Text;
 
-
-            /* 
-
-             You can use
-
-             username = admin
-             password = admin
-
-            */
-
-            //Validation Checking
-            if (LoginValidation.Validate(username, password) && Tries != 0)
+            if (username.Equals("") || password.Equals(""))
             {
-                optionScreen options = new optionScreen();
-                this.Hide();
-                options.ShowDialog();
-                this.Close();
-
-            }
-            else if (Tries != 0)
-            {
-                MessageBox.Show(string.Format("Invalid username or password\n(Tries Left: {0})", Tries),"Invalid", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                Tries--;
+                MessageBox.Show(string.Format("Username or Password cant be empty"), "Invalid", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else
             {
-                MessageBox.Show("You have been locked out","ERROR",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                //Validation Checking
+                if (LoginValidation.Validate(username, password) && Tries != 0)
+                {
+                    optionScreen options = new optionScreen();
+                    this.Hide();
+                    options.ShowDialog();
+                    this.Close();
+
+                }
+                else if (Tries != 0)
+                {
+                    MessageBox.Show(string.Format("Invalid username or password\n(Tries Left: {0})", Tries), "Invalid", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    Tries--;
+                }
+                else
+                {
+                    MessageBox.Show("You have been locked out", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
         }
 

@@ -31,13 +31,12 @@ namespace SEN371_Project.Forms
         {
             solidGauge1.From = 0;
             solidGauge1.To = 10;
-        /*    solidGauge1.Value = 5; */
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
+        private void textBox1_TextChanged(object sender, EventArgs  e)
         {
             String checkID = textBox1.Text;
-            String[] Result = Database_handler.Select(checkID);
+            String[] Result = Database_handler.GetPerformance(checkID);
 
             if (!Result[0].Equals(""))
             {

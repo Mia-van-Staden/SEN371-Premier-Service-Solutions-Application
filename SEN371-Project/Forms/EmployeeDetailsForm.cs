@@ -37,7 +37,15 @@ namespace SEN371_Project.Forms
 
         }
 
-
-
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            if(!textBox1.Text.Equals(""))
+            {
+                string query = "SELECT * from EmployeeDetails WHERE EmployeeNumber = " + textBox1.Text + "";
+                DataTable dt = Database_handler.AdaptSelect(query);
+                dataGridView1.DataSource = dt;
+            }
+            
+        }
     }
 }

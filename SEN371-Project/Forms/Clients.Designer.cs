@@ -34,12 +34,13 @@
             this.btnBack = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.btnSLA = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnDetails
             // 
             this.btnDetails.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDetails.Location = new System.Drawing.Point(293, 179);
+            this.btnDetails.Location = new System.Drawing.Point(293, 234);
             this.btnDetails.Margin = new System.Windows.Forms.Padding(2);
             this.btnDetails.Name = "btnDetails";
             this.btnDetails.Size = new System.Drawing.Size(158, 38);
@@ -51,7 +52,7 @@
             // btnHistory
             // 
             this.btnHistory.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnHistory.Location = new System.Drawing.Point(324, 232);
+            this.btnHistory.Location = new System.Drawing.Point(324, 276);
             this.btnHistory.Margin = new System.Windows.Forms.Padding(2);
             this.btnHistory.Name = "btnHistory";
             this.btnHistory.Size = new System.Drawing.Size(99, 38);
@@ -63,7 +64,7 @@
             // btnBack
             // 
             this.btnBack.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBack.Location = new System.Drawing.Point(346, 288);
+            this.btnBack.Location = new System.Drawing.Point(345, 322);
             this.btnBack.Margin = new System.Windows.Forms.Padding(2);
             this.btnBack.Name = "btnBack";
             this.btnBack.Size = new System.Drawing.Size(54, 27);
@@ -98,6 +99,18 @@
             this.label3.TabIndex = 10;
             this.label3.Text = "Client Options";
             // 
+            // btnSLA
+            // 
+            this.btnSLA.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSLA.Location = new System.Drawing.Point(249, 183);
+            this.btnSLA.Margin = new System.Windows.Forms.Padding(2);
+            this.btnSLA.Name = "btnSLA";
+            this.btnSLA.Size = new System.Drawing.Size(251, 38);
+            this.btnSLA.TabIndex = 12;
+            this.btnSLA.Text = "Service Level Agreement";
+            this.btnSLA.UseVisualStyleBackColor = true;
+            this.btnSLA.Click += new System.EventHandler(this.btnSLA_Click);
+            // 
             // Clients
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -105,6 +118,7 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(749, 504);
+            this.Controls.Add(this.btnSLA);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.btnBack);
@@ -125,5 +139,6 @@
         private System.Windows.Forms.Button btnBack;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button btnSLA;
     }
 }

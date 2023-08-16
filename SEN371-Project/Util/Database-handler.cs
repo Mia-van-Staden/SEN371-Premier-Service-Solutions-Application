@@ -53,7 +53,7 @@ namespace SEN371_Project.Util
 
         }
 
-        public static string[] Select(string EmpID)
+        public static string[] GetPerformance(string EmpID)
         {
             SQLiteConnection conn = new SQLiteConnection(@"data source=..\..\Database\Premier_SQLite_Final.db");
             String[] Arr = {"","","","",""};

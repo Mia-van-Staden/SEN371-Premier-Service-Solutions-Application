@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SEN371_Project.Forms;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -36,6 +37,14 @@ namespace SEN371_Project
         private void btnBack_Click(object sender, EventArgs e)
         {
             optionScreen Form = new optionScreen();
+            this.Hide();
+            Form.ShowDialog();
+            this.Close();
+        }
+
+        private void btnSLA_Click(object sender, EventArgs e)
+        {
+            SLA Form = new SLA();
             this.Hide();
             Form.ShowDialog();
             this.Close();

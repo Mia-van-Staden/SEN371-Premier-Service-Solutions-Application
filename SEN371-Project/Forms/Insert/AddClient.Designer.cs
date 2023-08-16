@@ -46,11 +46,14 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.btnBack = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(136, 296);
+            this.btnAdd.FlatAppearance.BorderColor = System.Drawing.Color.Gold;
+            this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAdd.Location = new System.Drawing.Point(110, 293);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(75, 23);
             this.btnAdd.TabIndex = 33;
@@ -118,7 +121,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.BackColor = System.Drawing.Color.Transparent;
-            this.label7.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.label7.ForeColor = System.Drawing.Color.Goldenrod;
             this.label7.Location = new System.Drawing.Point(52, 231);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(50, 13);
@@ -129,7 +132,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.BackColor = System.Drawing.Color.Transparent;
-            this.label8.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.label8.ForeColor = System.Drawing.Color.Goldenrod;
             this.label8.Location = new System.Drawing.Point(52, 203);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(43, 13);
@@ -140,7 +143,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.Color.Transparent;
-            this.label5.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.label5.ForeColor = System.Drawing.Color.Goldenrod;
             this.label5.Location = new System.Drawing.Point(52, 181);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(45, 13);
@@ -151,7 +154,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.BackColor = System.Drawing.Color.Transparent;
-            this.label6.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.label6.ForeColor = System.Drawing.Color.Goldenrod;
             this.label6.Location = new System.Drawing.Point(52, 153);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(73, 13);
@@ -162,7 +165,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.label3.ForeColor = System.Drawing.Color.Goldenrod;
             this.label3.Location = new System.Drawing.Point(52, 127);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(78, 13);
@@ -173,7 +176,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.label4.ForeColor = System.Drawing.Color.Goldenrod;
             this.label4.Location = new System.Drawing.Point(52, 99);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(49, 13);
@@ -184,7 +187,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.label2.ForeColor = System.Drawing.Color.Goldenrod;
             this.label2.Location = new System.Drawing.Point(52, 71);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(35, 13);
@@ -195,12 +198,24 @@
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.label1.ForeColor = System.Drawing.Color.Goldenrod;
             this.label1.Location = new System.Drawing.Point(52, 43);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(70, 13);
             this.label1.TabIndex = 17;
             this.label1.Text = "ClientNumber";
+            // 
+            // btnBack
+            // 
+            this.btnBack.FlatAppearance.BorderColor = System.Drawing.Color.Gold;
+            this.btnBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBack.Location = new System.Drawing.Point(12, 12);
+            this.btnBack.Name = "btnBack";
+            this.btnBack.Size = new System.Drawing.Size(75, 23);
+            this.btnBack.TabIndex = 34;
+            this.btnBack.Text = "Back";
+            this.btnBack.UseVisualStyleBackColor = true;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
             // AddClient
             // 
@@ -208,6 +223,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(308, 365);
+            this.Controls.Add(this.btnBack);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.txtZipCode);
             this.Controls.Add(this.txtCountry);
@@ -227,6 +243,7 @@
             this.Controls.Add(this.label1);
             this.Name = "AddClient";
             this.Text = "AddClient";
+            this.Load += new System.EventHandler(this.AddClient_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -251,5 +268,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btnBack;
     }
 }

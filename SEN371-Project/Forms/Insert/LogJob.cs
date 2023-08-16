@@ -46,11 +46,14 @@ namespace SEN371_Project
             if (!(EmployeePhoneNum.Equals("")) && !(ClientPhoneNum.Equals("")))
             {
                 
-                string query = "INSERT INTO JobDetails (JobID, EmployeeID, EquipmentDetails, JobDescription, Location, StartDate, EndDate, ExpectedTime, PossibleSlackTime, ClientID)" +
+                string query1 = "INSERT INTO JobDetails (JobID, EmployeeID, EquipmentDetails, JobDescription, Location, StartDate, EndDate, ExpectedTime, PossibleSlackTime, ClientID)" +
                                "VALUES (" + RandomJobID + "," + employeeID + ",'" + equipmentDetails + "','" + jobDescription + "','" + clientAddress + "','" + startTime + "','" + endDate + "'," + expectedTime + "," + SlackTime + "," + ClientID + ")";
+                string query2 = "INSERT INTO JobsInProgress (JobID, EmployeeID, ClientID, Details)" +
+                               "VALUES (" + RandomJobID + "," + employeeID + "," + ClientID + ",'" + jobDescription+"')";
 
-                //Send query to database handler
-                Database_handler.Insert(query);
+                //Send queries to database handler
+                Database_handler.Insert(query1);
+                Database_handler.Insert(query2);
 
                 //Request to send messages to client and employee
 
@@ -62,7 +65,7 @@ namespace SEN371_Project
                 MessageBox.Show("Job was successfully added", "Successfull");
 
                 var form = Application.OpenForms["Caller"];
-                if (form == null)
+                if (form != null)
                 {
                     Caller Form = new Caller();
                     this.Hide();

@@ -34,7 +34,7 @@ namespace SEN371_Project
 
         private void btnBack_Click(object sender, EventArgs e)
         {
-            optionScreen Form = new optionScreen();
+            Clients Form = new Clients();
             this.Hide();
             Form.ShowDialog();
             this.Close();
@@ -44,7 +44,10 @@ namespace SEN371_Project
         {
             string query = "SELECT * from CallLogDetails";
             DataTable dt = Database_handler.AdaptSelect(query);
-            dataGridView1.DataSource = dt;
+            if (dt != null)
+            {
+                dataGridView1.DataSource = dt;
+            }
         }
     }
 }

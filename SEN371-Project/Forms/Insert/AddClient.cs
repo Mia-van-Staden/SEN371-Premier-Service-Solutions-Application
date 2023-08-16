@@ -33,15 +33,31 @@ namespace SEN371_Project.Forms.Insert
                                "VALUES (" + EmID + ",'" + Name + "','" + Surname + "','" + PhoneNum + "','" + Email + "','" + Address + "','" + Country + "'," + ZipCode + ")";
 
 
+           
+            
+
+
+            MessageBox.Show(string.Format("Trying to add\n{0}({1})", Name, EmID), "Successfull", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            
             //Send query to database handler
             Database_handler.Insert(query);
-
-
-            MessageBox.Show(string.Format("Successfully Added\n{0}({1})", Name, EmID), "Successfull", MessageBoxButtons.OK, MessageBoxIcon.Information);
             ClientDetails Form = new ClientDetails();
             this.Hide();
             Form.ShowDialog();
             this.Close();
+        }
+
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            Clients Form = new Clients();
+            this.Hide();
+            Form.ShowDialog();
+            this.Close();
+        }
+
+        private void AddClient_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

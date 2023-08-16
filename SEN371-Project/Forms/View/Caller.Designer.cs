@@ -38,6 +38,8 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.btnLog = new System.Windows.Forms.Button();
             this.btnMerge = new System.Windows.Forms.Button();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.lblTime = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
@@ -126,11 +128,27 @@
             this.btnMerge.Visible = false;
             this.btnMerge.Click += new System.EventHandler(this.button1_Click);
             // 
+            // timer1
+            // 
+            this.timer1.Interval = 1000;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // lblTime
+            // 
+            this.lblTime.AutoSize = true;
+            this.lblTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTime.ForeColor = System.Drawing.Color.Red;
+            this.lblTime.Location = new System.Drawing.Point(184, 88);
+            this.lblTime.Name = "lblTime";
+            this.lblTime.Size = new System.Drawing.Size(0, 13);
+            this.lblTime.TabIndex = 28;
+            // 
             // Caller
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(406, 314);
+            this.Controls.Add(this.lblTime);
             this.Controls.Add(this.btnMerge);
             this.Controls.Add(this.btnLog);
             this.Controls.Add(this.pictureBox2);
@@ -157,5 +175,7 @@
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Button btnLog;
         private System.Windows.Forms.Button btnMerge;
+        private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Label lblTime;
     }
 }

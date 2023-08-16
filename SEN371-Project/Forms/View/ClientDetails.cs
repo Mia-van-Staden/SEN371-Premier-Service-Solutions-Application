@@ -48,7 +48,11 @@ namespace SEN371_Project
         {
             string query = "SELECT * from ClientDetails";
             DataTable dt = Database_handler.AdaptSelect(query);
-            dataGridView1.DataSource = dt;
+            if (dt != null)
+            {
+                dataGridView1.DataSource = dt;
+            }
+            
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -59,13 +63,20 @@ namespace SEN371_Project
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-            if(!textBox1.Text.Equals(""))
+            if (!textBox1.Text.Equals(""))
             {
                 string query = "SELECT * from ClientDetails WHERE ClientNumber = " + textBox1.Text + "";
                 DataTable dt = Database_handler.AdaptSelect(query);
                 dataGridView1.DataSource = dt;
             }
-            
+            else if (textBox1.Text.Equals(""))
+            {
+                string query = "SELECT * from ClientDetails";
+                DataTable dt = Database_handler.AdaptSelect(query);
+                dataGridView1.DataSource = dt;
+            }
+
+
         }
 
         private void label1_Click(object sender, EventArgs e)

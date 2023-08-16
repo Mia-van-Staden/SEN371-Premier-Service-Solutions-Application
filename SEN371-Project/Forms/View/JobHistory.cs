@@ -37,8 +37,9 @@ namespace SEN371_Project
 
         private void btnBack_Click(object sender, EventArgs e)
         {
-            optionScreen option = new optionScreen( );
-            option.ShowDialog();
+            Jobs Form = new Jobs();
+            this.Hide();
+            Form.ShowDialog();
             this.Close();
         }
 
@@ -46,7 +47,10 @@ namespace SEN371_Project
         {
             string query = "SELECT * from JobHistory";
             DataTable dt = Database_handler.AdaptSelect(query);
-            dataGridView1.DataSource = dt;
+            if (dt != null)
+            {
+                dataGridView1.DataSource = dt;
+            }
         }
     }
 }

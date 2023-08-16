@@ -57,13 +57,13 @@
             this.txtSlack.Margin = new System.Windows.Forms.Padding(2);
             this.txtSlack.Name = "txtSlack";
             this.txtSlack.Size = new System.Drawing.Size(142, 20);
-            this.txtSlack.TabIndex = 45;
+            this.txtSlack.TabIndex = 41;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.label3.ForeColor = System.Drawing.Color.Goldenrod;
             this.label3.Location = new System.Drawing.Point(64, 328);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
@@ -73,6 +73,8 @@
             // 
             // btnClose
             // 
+            this.btnClose.FlatAppearance.BorderColor = System.Drawing.Color.Gold;
+            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClose.Location = new System.Drawing.Point(11, 11);
             this.btnClose.Margin = new System.Windows.Forms.Padding(2);
             this.btnClose.Name = "btnClose";
@@ -84,6 +86,8 @@
             // 
             // btnSubmit
             // 
+            this.btnSubmit.FlatAppearance.BorderColor = System.Drawing.Color.Gold;
+            this.btnSubmit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSubmit.Location = new System.Drawing.Point(241, 413);
             this.btnSubmit.Margin = new System.Windows.Forms.Padding(2);
             this.btnSubmit.Name = "btnSubmit";
@@ -99,7 +103,7 @@
             this.txtDescription.Margin = new System.Windows.Forms.Padding(2);
             this.txtDescription.Name = "txtDescription";
             this.txtDescription.Size = new System.Drawing.Size(142, 20);
-            this.txtDescription.TabIndex = 41;
+            this.txtDescription.TabIndex = 42;
             // 
             // txtExpected
             // 
@@ -161,7 +165,7 @@
             // 
             this.label11.AutoSize = true;
             this.label11.BackColor = System.Drawing.Color.Transparent;
-            this.label11.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.label11.ForeColor = System.Drawing.Color.Goldenrod;
             this.label11.Location = new System.Drawing.Point(64, 368);
             this.label11.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label11.Name = "label11";
@@ -173,7 +177,7 @@
             // 
             this.label9.AutoSize = true;
             this.label9.BackColor = System.Drawing.Color.Transparent;
-            this.label9.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.label9.ForeColor = System.Drawing.Color.Goldenrod;
             this.label9.Location = new System.Drawing.Point(64, 292);
             this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label9.Name = "label9";
@@ -185,7 +189,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.BackColor = System.Drawing.Color.Transparent;
-            this.label8.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.label8.ForeColor = System.Drawing.Color.Goldenrod;
             this.label8.Location = new System.Drawing.Point(64, 257);
             this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label8.Name = "label8";
@@ -197,7 +201,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.BackColor = System.Drawing.Color.Transparent;
-            this.label7.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.label7.ForeColor = System.Drawing.Color.Goldenrod;
             this.label7.Location = new System.Drawing.Point(64, 212);
             this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label7.Name = "label7";
@@ -209,7 +213,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.BackColor = System.Drawing.Color.Transparent;
-            this.label6.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.label6.ForeColor = System.Drawing.Color.Goldenrod;
             this.label6.Location = new System.Drawing.Point(64, 176);
             this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
@@ -221,7 +225,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.label4.ForeColor = System.Drawing.Color.Goldenrod;
             this.label4.Location = new System.Drawing.Point(64, 137);
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
@@ -233,7 +237,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.label2.ForeColor = System.Drawing.Color.Goldenrod;
             this.label2.Location = new System.Drawing.Point(64, 99);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
@@ -245,7 +249,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.label1.ForeColor = System.Drawing.Color.Goldenrod;
             this.label1.Location = new System.Drawing.Point(64, 60);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";

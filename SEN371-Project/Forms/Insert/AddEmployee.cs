@@ -38,11 +38,14 @@ namespace SEN371_Project.Forms.Insert
                                "VALUES (" + EmID + ",'" + Name + "','" + Surname + "','" + PhoneNum + "','" + Email + "','" + Address + "','" + Country + "'," + ZipCode +")";
 
 
+            
+
+
+            MessageBox.Show(string.Format("Trying to add\n{0}({1})", Name, EmID), "Successfull", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
             //Send query to database handler
             Database_handler.Insert(query);
 
-
-            MessageBox.Show(string.Format("Successfully Added\n{0}({1})", Name, EmID), "Successfull", MessageBoxButtons.OK, MessageBoxIcon.Information);
             EmployeeDetailsForm Form = new EmployeeDetailsForm();
             this.Hide();
             Form.ShowDialog();
@@ -123,6 +126,14 @@ namespace SEN371_Project.Forms.Insert
         private void label1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            Employess Form = new Employess();
+            this.Hide();
+            Form.ShowDialog();
+            this.Close();
         }
     }
 }

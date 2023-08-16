@@ -25,15 +25,26 @@ namespace SEN371_Project.Forms.Update
             jobID = Caller.gJobID;
             string[] arr = Database_handler.GetJob(jobID.ToString());
 
-            txtClientID.Text = arr[0];
-            txtEmployeeID.Text = arr[1];
-            txtAdress.Text = arr[2];
-            txtEquipmentDetails.Text = arr[3];
-            dtpStartDate.Text = arr[4];
-            dtpEndDate.Text = arr[5];
-            txtExpected.Text = arr[6];
-            txtSlack.Text = arr[7];
-            txtDescription.Text = arr[8];
+
+            if (arr[0] != "" && arr != null)
+            {
+                txtClientID.Text = arr[0];
+                txtEmployeeID.Text = arr[1];
+                txtAdress.Text = arr[2];
+                txtEquipmentDetails.Text = arr[3];
+                dtpStartDate.Text = arr[4];
+                dtpEndDate.Text = arr[5];
+                txtExpected.Text = arr[6];
+                txtSlack.Text = arr[7];
+                txtDescription.Text = arr[8];
+            }
+            else
+            {
+                MessageBox.Show(string.Format("Invalid JobID: {0}", jobID), "Invalid", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                this.Hide();
+                this.Close();
+            }
+
 
         }
 

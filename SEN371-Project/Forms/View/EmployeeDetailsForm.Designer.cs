@@ -39,7 +39,9 @@
             // 
             // btnBack
             // 
-            this.btnBack.Location = new System.Drawing.Point(333, 360);
+            this.btnBack.FlatAppearance.BorderColor = System.Drawing.Color.Gold;
+            this.btnBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBack.Location = new System.Drawing.Point(36, 360);
             this.btnBack.Margin = new System.Windows.Forms.Padding(2);
             this.btnBack.Name = "btnBack";
             this.btnBack.Size = new System.Drawing.Size(80, 44);
@@ -63,8 +65,8 @@
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.label1.Location = new System.Drawing.Point(120, 387);
+            this.label1.ForeColor = System.Drawing.Color.Goldenrod;
+            this.label1.Location = new System.Drawing.Point(275, 376);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(64, 13);
@@ -73,7 +75,7 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(189, 384);
+            this.textBox1.Location = new System.Drawing.Point(344, 373);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(100, 20);
             this.textBox1.TabIndex = 9;
@@ -81,6 +83,8 @@
             // 
             // btnAddEmployee
             // 
+            this.btnAddEmployee.FlatAppearance.BorderColor = System.Drawing.Color.Gold;
+            this.btnAddEmployee.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAddEmployee.Location = new System.Drawing.Point(640, 360);
             this.btnAddEmployee.Margin = new System.Windows.Forms.Padding(2);
             this.btnAddEmployee.Name = "btnAddEmployee";

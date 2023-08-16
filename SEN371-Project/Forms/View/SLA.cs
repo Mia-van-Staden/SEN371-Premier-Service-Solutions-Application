@@ -24,7 +24,7 @@ namespace SEN371_Project.Forms
 
         private void btnBack_Click(object sender, EventArgs e)
         {
-            optionScreen Form = new optionScreen();
+            Clients Form = new Clients();
             this.Hide();
             Form.ShowDialog();
             this.Close();

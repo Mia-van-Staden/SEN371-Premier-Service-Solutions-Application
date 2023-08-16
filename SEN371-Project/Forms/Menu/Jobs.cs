@@ -35,7 +35,7 @@ namespace SEN371_Project
 
         private void btnHistory_Click(object sender, EventArgs e)
         {
-            HistoryCall Form = new HistoryCall();
+            JobHistory Form = new JobHistory();
             this.Hide();
             Form.ShowDialog();
             this.Close();

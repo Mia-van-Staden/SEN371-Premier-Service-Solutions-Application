@@ -48,7 +48,9 @@
             // 
             // btnBack
             // 
-            this.btnBack.Location = new System.Drawing.Point(132, 309);
+            this.btnBack.FlatAppearance.BorderColor = System.Drawing.Color.Gold;
+            this.btnBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBack.Location = new System.Drawing.Point(11, 304);
             this.btnBack.Margin = new System.Windows.Forms.Padding(2);
             this.btnBack.Name = "btnBack";
             this.btnBack.Size = new System.Drawing.Size(92, 32);

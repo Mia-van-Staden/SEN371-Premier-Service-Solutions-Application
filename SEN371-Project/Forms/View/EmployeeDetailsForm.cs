@@ -34,7 +34,10 @@ namespace SEN371_Project.Forms
           
             string query = "SELECT * from EmployeeDetails";
             DataTable dt = Database_handler.AdaptSelect(query);
-            dataGridView1.DataSource = dt;
+            if (dt != null)
+            {
+                dataGridView1.DataSource = dt;
+            }
 
         }
 
@@ -46,7 +49,13 @@ namespace SEN371_Project.Forms
                 DataTable dt = Database_handler.AdaptSelect(query);
                 dataGridView1.DataSource = dt;
             }
-            
+            else if (textBox1.Text.Equals(""))
+            {
+                string query = "SELECT * from EmployeeDetails";
+                DataTable dt = Database_handler.AdaptSelect(query);
+                dataGridView1.DataSource = dt;
+            }
+
         }
 
         private void btnAddEmployee_Click(object sender, EventArgs e)

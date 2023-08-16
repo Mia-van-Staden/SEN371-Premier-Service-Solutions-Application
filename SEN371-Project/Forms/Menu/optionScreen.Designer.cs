@@ -39,18 +39,27 @@
             // 
             // btnEmployees
             // 
+            this.btnEmployees.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.btnEmployees.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnEmployees.FlatAppearance.BorderColor = System.Drawing.Color.Gold;
+            this.btnEmployees.FlatAppearance.BorderSize = 2;
+            this.btnEmployees.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEmployees.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEmployees.Location = new System.Drawing.Point(275, 142);
-            this.btnEmployees.Margin = new System.Windows.Forms.Padding(2);
+            this.btnEmployees.Location = new System.Drawing.Point(275, 144);
+            this.btnEmployees.Margin = new System.Windows.Forms.Padding(1);
             this.btnEmployees.Name = "btnEmployees";
             this.btnEmployees.Size = new System.Drawing.Size(120, 46);
             this.btnEmployees.TabIndex = 0;
             this.btnEmployees.Text = "Emloyees";
-            this.btnEmployees.UseVisualStyleBackColor = true;
+            this.btnEmployees.UseVisualStyleBackColor = false;
             this.btnEmployees.Click += new System.EventHandler(this.btnEmployees_Click);
             // 
             // btnClients
             // 
+            this.btnClients.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.btnClients.FlatAppearance.BorderColor = System.Drawing.Color.Gold;
+            this.btnClients.FlatAppearance.BorderSize = 2;
+            this.btnClients.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClients.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClients.Location = new System.Drawing.Point(275, 211);
             this.btnClients.Margin = new System.Windows.Forms.Padding(2);
@@ -58,11 +67,15 @@
             this.btnClients.Size = new System.Drawing.Size(120, 46);
             this.btnClients.TabIndex = 1;
             this.btnClients.Text = "Clients";
-            this.btnClients.UseVisualStyleBackColor = true;
+            this.btnClients.UseVisualStyleBackColor = false;
             this.btnClients.Click += new System.EventHandler(this.btnClients_Click);
             // 
             // btnJobs
             // 
+            this.btnJobs.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.btnJobs.FlatAppearance.BorderColor = System.Drawing.Color.Gold;
+            this.btnJobs.FlatAppearance.BorderSize = 2;
+            this.btnJobs.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnJobs.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnJobs.Location = new System.Drawing.Point(275, 281);
             this.btnJobs.Margin = new System.Windows.Forms.Padding(2);
@@ -70,7 +83,7 @@
             this.btnJobs.Size = new System.Drawing.Size(120, 46);
             this.btnJobs.TabIndex = 2;
             this.btnJobs.Text = "Jobs";
-            this.btnJobs.UseVisualStyleBackColor = true;
+            this.btnJobs.UseVisualStyleBackColor = false;
             this.btnJobs.Click += new System.EventHandler(this.btnJobs_Click);
             // 
             // label3
@@ -78,7 +91,7 @@
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 35F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label3.ForeColor = System.Drawing.Color.Goldenrod;
             this.label3.Location = new System.Drawing.Point(179, 39);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
@@ -92,7 +105,7 @@
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label4.ForeColor = System.Drawing.Color.Goldenrod;
             this.label4.Location = new System.Drawing.Point(251, 93);
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
@@ -102,14 +115,19 @@
             // 
             // button1
             // 
+            this.button1.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.Gold;
+            this.button1.FlatAppearance.BorderSize = 2;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.Red;
             this.button1.Location = new System.Drawing.Point(297, 410);
             this.button1.Margin = new System.Windows.Forms.Padding(2);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(80, 29);
             this.button1.TabIndex = 8;
             this.button1.Text = "Log out";
-            this.button1.UseVisualStyleBackColor = true;
+            this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // optionScreen
@@ -128,6 +146,7 @@
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "optionScreen";
             this.Text = "Option Screen";
+            this.Load += new System.EventHandler(this.optionScreen_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -8,110 +8,228 @@ using System.Data;
 using System.Data.SQLite;
 using System.IO;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Twilio;
+
 namespace SEN371_Project.Util
 {
     internal class Database_handler
     {
         public static void Insert(string query)
         {
-            Backup();
-            //Create an open connection
-            SQLiteConnection conn = new SQLiteConnection(@"data source=..\..\Database\Premier_SQLite_Final.db");
-            conn.Open();
 
-            //Initialize the SqliteCommand
-            var SqliteCmd = new SQLiteCommand();
+            try
+            {
+                Backup();
+                //Create an open connection
+                SQLiteConnection conn = new SQLiteConnection(@"data source=..\..\Database\Premier_SQLite_Final.db");
+                conn.Open();
 
-            //Create the SqliteCommand
-            SqliteCmd = conn.CreateCommand();
+                //Initialize the SqliteCommand
+                var SqliteCmd = new SQLiteCommand();
 
-            //Assigning the query to CommandText
-            SqliteCmd.CommandText = query;
+                //Create the SqliteCommand
+                SqliteCmd = conn.CreateCommand();
 
-            //Execute the SqliteCommand
-            SqliteCmd.ExecuteNonQuery();
-            conn.Close();
+                //Assigning the query to CommandText
+                SqliteCmd.CommandText = query;
+
+                //Execute the SqliteCommand
+                SqliteCmd.ExecuteNonQuery();
+                conn.Close();
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message.ToString(), "Error");
+            }
+
+
         }
 
         public static void Update(string query)
         {
-            Backup();
-            //Create an open connection
-            SQLiteConnection conn = new SQLiteConnection(@"data source=..\..\Database\Premier_SQLite_Final.db");
-            conn.Open();
+            try
+            {
+                Backup();
+                //Create an open connection
+                SQLiteConnection conn = new SQLiteConnection(@"data source=..\..\Database\Premier_SQLite_Final.db");
+                conn.Open();
 
-            //Initialize the SqliteCommand
-            var SqliteCmd = new SQLiteCommand();
+                //Initialize the SqliteCommand
+                var SqliteCmd = new SQLiteCommand();
 
-            //Create the SqliteCommand
-            SqliteCmd = conn.CreateCommand();
+                //Create the SqliteCommand
+                SqliteCmd = conn.CreateCommand();
 
-            //Assigning the query to CommandText
-            SqliteCmd.CommandText = query;
+                //Assigning the query to CommandText
+                SqliteCmd.CommandText = query;
 
-            //Execute the SqliteCommand
-            SqliteCmd.ExecuteNonQuery();
-            conn.Close();
+                //Execute the SqliteCommand
+                SqliteCmd.ExecuteNonQuery();
+                conn.Close();
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message.ToString(), "Error");
+            }
+
+        }
+
+        public static void Delete(string query)
+        {
+            try
+            {
+                Backup();
+                //Create an open connection
+                SQLiteConnection conn = new SQLiteConnection(@"data source=..\..\Database\Premier_SQLite_Final.db");
+                conn.Open();
+
+                //Initialize the SqliteCommand
+                var SqliteCmd = new SQLiteCommand();
+
+                //Create the SqliteCommand
+                SqliteCmd = conn.CreateCommand();
+
+                //Assigning the query to CommandText
+                SqliteCmd.CommandText = query;
+
+                //Execute the SqliteCommand
+                SqliteCmd.ExecuteNonQuery();
+                conn.Close();
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message.ToString(), "Error");
+            }
+
         }
         public static DataTable AdaptSelect(string query)
         {
-            Backup();
-            //Create and open connection
-            SQLiteConnection conn = new SQLiteConnection(@"data source=..\..\Database\Premier_SQLite_Final.db");
-            conn.Open();
-
-            //Create the command to send to database
-            SQLiteCommand cmd = new SQLiteCommand(query, conn);
-
             //Used to store result in correct format for a datagridview
             DataTable dt = new DataTable();
+            try
+            {
+                Backup();
+                //Create and open connection
+                SQLiteConnection conn = new SQLiteConnection(@"data source=..\..\Database\Premier_SQLite_Final.db");
+                conn.Open();
 
-            //This will get the data from the database using the cmd, adapt and store.
-            SQLiteDataAdapter adapter = new SQLiteDataAdapter(cmd);
-            adapter.Fill(dt);
+                //Create the command to send to database
+                SQLiteCommand cmd = new SQLiteCommand(query, conn);
 
-            conn.Close();
+                
+
+                //This will get the data from the database using the cmd, adapt and store.
+                SQLiteDataAdapter adapter = new SQLiteDataAdapter(cmd);
+                adapter.Fill(dt);
+
+                conn.Close();
+                return dt;
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message.ToString(), "Error");
+            }
+
             return dt;
-
         }
 
         public static string[] GetPerformance(string EmpID)
         {
-            Backup();
-
-            SQLiteConnection conn = new SQLiteConnection(@"data source=..\..\Database\Premier_SQLite_Final.db");
-            String[] Arr = {"","","","",""};
-
-            using (var cmd = new SQLiteCommand(conn))
+            String[] Arr = { "", "", "", "", "" };
+            try
             {
-                using (var command = new SQLiteCommand(conn))
-                {
-                    conn.Open();
-                    command.CommandText = "SELECT * FROM EmployeePerformance";
-                    using (var reader = command.ExecuteReader())
-                    {
-                        while (reader.Read())
-                        {
-                            string ID = reader["EmployeeNumber"].ToString();
+                Backup();
 
-                            if ((ID.Equals(EmpID)))
+                SQLiteConnection conn = new SQLiteConnection(@"data source=..\..\Database\Premier_SQLite_Final.db");
+                
+
+                using (var cmd = new SQLiteCommand(conn))
+                {
+                    using (var command = new SQLiteCommand(conn))
+                    {
+                        conn.Open();
+                        command.CommandText = "SELECT * FROM EmployeePerformance";
+                        using (var reader = command.ExecuteReader())
+                        {
+                            while (reader.Read())
                             {
-                                Arr[0] = reader["EmployeeNumber"].ToString();
-                                Arr[1] = reader["EmployeeName"].ToString();
-                                Arr[2] = reader["EmployeeSurname"].ToString();
-                                Arr[3] = reader["PerformanceRating"].ToString();
-                                Arr[4] = reader["JobDescription"].ToString();
-                                conn.Close();
-                                return Arr;
+                                string ID = reader["EmployeeNumber"].ToString();
+
+                                if ((ID.Equals(EmpID)))
+                                {
+                                    Arr[0] = reader["EmployeeNumber"].ToString();
+                                    Arr[1] = reader["EmployeeName"].ToString();
+                                    Arr[2] = reader["EmployeeSurname"].ToString();
+                                    Arr[3] = reader["PerformanceRating"].ToString();
+                                    Arr[4] = reader["JobDescription"].ToString();
+                                    conn.Close();
+                                    return Arr;
+                                }
                             }
                         }
+                        conn.Close();
                     }
-                    conn.Close();
                 }
+                return Arr;
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message.ToString(), "Error");
+            }
+            return Arr;
+        }
+
+        public static string[] GetClient(string ClientID)
+        {
+            String[] Arr = { "", "", "", "", "", "", "", "" };
+            try
+            {
+                Backup();
+
+                SQLiteConnection conn = new SQLiteConnection(@"data source=..\..\Database\Premier_SQLite_Final.db");
+
+
+                using (var cmd = new SQLiteCommand(conn))
+                {
+                    using (var command = new SQLiteCommand(conn))
+                    {
+                        conn.Open();
+                        command.CommandText = "SELECT * FROM ClientDetails";
+                        using (var reader = command.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+                                string ID = reader["ClientNumber"].ToString();
+
+                                if ((ID.Equals(ClientID)))
+                                {
+                                    Arr[0] = reader["ClientNumber"].ToString();
+                                    Arr[1] = reader["ClientName"].ToString();
+                                    Arr[2] = reader["ClientSurname"].ToString();
+                                    Arr[3] = reader["ClientPhoneNumber"].ToString();
+                                    Arr[4] = reader["ClientEmailAddress"].ToString();
+                                    Arr[5] = reader["ClientAddress"].ToString();
+                                    Arr[6] = reader["ClientCountry"].ToString();
+                                    Arr[7] = reader["ClientZipCode"].ToString();
+
+                                    conn.Close();
+                                    return Arr;
+                                }
+                            }
+                        }
+                        conn.Close();
+                    }
+                }
+                return Arr;
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message.ToString(), "Error");
             }
             return Arr;
         }
@@ -136,41 +254,50 @@ namespace SEN371_Project.Util
 
         public static string[] GetJob(string JobID)
         {
-            Backup();
-
-            SQLiteConnection conn = new SQLiteConnection(@"data source=..\..\Database\Premier_SQLite_Final.db");
-            String[] Arr = { "", "", "", "", "", "", "", "", ""};
-
-            using (var cmd = new SQLiteCommand(conn))
+            String[] Arr = { "", "", "", "", "", "", "", "", "" };
+            try
             {
-                using (var command = new SQLiteCommand(conn))
-                {
-                    conn.Open();
-                    command.CommandText = "SELECT * FROM JobDetails";
-                    using (var reader = command.ExecuteReader())
-                    {
-                        while (reader.Read())
-                        {
-                            string ID = reader["JobID"].ToString();
+                Backup();
 
-                            if ((ID.Equals(JobID)))
+                SQLiteConnection conn = new SQLiteConnection(@"data source=..\..\Database\Premier_SQLite_Final.db");
+                
+
+                using (var cmd = new SQLiteCommand(conn))
+                {
+                    using (var command = new SQLiteCommand(conn))
+                    {
+                        conn.Open();
+                        command.CommandText = "SELECT * FROM JobDetails";
+                        using (var reader = command.ExecuteReader())
+                        {
+                            while (reader.Read())
                             {
-                                Arr[0] = reader["ClientID"].ToString();
-                                Arr[1] = reader["EmployeeID"].ToString();
-                                Arr[2] = reader["Location"].ToString();
-                                Arr[3] = reader["EquipmentDetails"].ToString();
-                                Arr[4] = reader["StartDate"].ToString();
-                                Arr[5] = reader["EndDate"].ToString();
-                                Arr[6] = reader["ExpectedTime"].ToString();
-                                Arr[7] = reader["PossibleSlackTime"].ToString();
-                                Arr[8] = reader["JobDescription"].ToString();
-                                conn.Close();
-                                return Arr;
+                                string ID = reader["JobID"].ToString();
+
+                                if ((ID.Equals(JobID)))
+                                {
+                                    Arr[0] = reader["ClientID"].ToString();
+                                    Arr[1] = reader["EmployeeID"].ToString();
+                                    Arr[2] = reader["Location"].ToString();
+                                    Arr[3] = reader["EquipmentDetails"].ToString();
+                                    Arr[4] = reader["StartDate"].ToString();
+                                    Arr[5] = reader["EndDate"].ToString();
+                                    Arr[6] = reader["ExpectedTime"].ToString();
+                                    Arr[7] = reader["PossibleSlackTime"].ToString();
+                                    Arr[8] = reader["JobDescription"].ToString();
+                                    conn.Close();
+                                    return Arr;
+                                }
                             }
                         }
+                        conn.Close();
                     }
-                    conn.Close();
                 }
+                return Arr;
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message.ToString(), "Error");
             }
             return Arr;
         }

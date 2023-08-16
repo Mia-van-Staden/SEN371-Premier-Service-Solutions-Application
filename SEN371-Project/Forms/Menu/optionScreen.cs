@@ -54,5 +54,10 @@ namespace SEN371_Project
             jobs.ShowDialog();
             this.Close();
         }
+
+        private void optionScreen_Load(object sender, EventArgs e)
+        {
+           
+        }
     }
 }

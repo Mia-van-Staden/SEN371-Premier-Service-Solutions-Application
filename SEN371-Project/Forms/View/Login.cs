@@ -55,12 +55,12 @@ namespace SEN371_Project
             }
             else if (Tries != 0)
             {
-                MessageBox.Show(string.Format("Invalid username or password\n(Tries Left: {0})", Tries),"Invalid", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show(string.Format("Invalid username or password\n(Tries Left: {0})", Tries),"Invalid", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 Tries--;
             }
             else
             {
-                MessageBox.Show("You have been locked out","ERROR",MessageBoxButtons.OK,MessageBoxIcon.Warning);
+                MessageBox.Show("You have been locked out","ERROR",MessageBoxButtons.OK,MessageBoxIcon.Error);
             }
         }
 

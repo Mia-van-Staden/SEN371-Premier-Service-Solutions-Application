@@ -40,18 +40,26 @@
             // 
             // btnProgress
             // 
+            this.btnProgress.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.btnProgress.FlatAppearance.BorderColor = System.Drawing.Color.Gold;
+            this.btnProgress.FlatAppearance.BorderSize = 2;
+            this.btnProgress.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnProgress.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnProgress.Location = new System.Drawing.Point(290, 183);
             this.btnProgress.Margin = new System.Windows.Forms.Padding(2);
             this.btnProgress.Name = "btnProgress";
             this.btnProgress.Size = new System.Drawing.Size(166, 40);
             this.btnProgress.TabIndex = 0;
-            this.btnProgress.Text = "Job Progress";
-            this.btnProgress.UseVisualStyleBackColor = true;
+            this.btnProgress.Text = "Job In Progress";
+            this.btnProgress.UseVisualStyleBackColor = false;
             this.btnProgress.Click += new System.EventHandler(this.btnProgress_Click);
             // 
             // btnDetails
             // 
+            this.btnDetails.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.btnDetails.FlatAppearance.BorderColor = System.Drawing.Color.Gold;
+            this.btnDetails.FlatAppearance.BorderSize = 2;
+            this.btnDetails.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDetails.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDetails.Location = new System.Drawing.Point(290, 239);
             this.btnDetails.Margin = new System.Windows.Forms.Padding(2);
@@ -59,11 +67,15 @@
             this.btnDetails.Size = new System.Drawing.Size(166, 40);
             this.btnDetails.TabIndex = 1;
             this.btnDetails.Text = "Details";
-            this.btnDetails.UseVisualStyleBackColor = true;
+            this.btnDetails.UseVisualStyleBackColor = false;
             this.btnDetails.Click += new System.EventHandler(this.btnDetails_Click);
             // 
             // btnHistory
             // 
+            this.btnHistory.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.btnHistory.FlatAppearance.BorderColor = System.Drawing.Color.Gold;
+            this.btnHistory.FlatAppearance.BorderSize = 2;
+            this.btnHistory.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnHistory.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnHistory.Location = new System.Drawing.Point(290, 297);
             this.btnHistory.Margin = new System.Windows.Forms.Padding(2);
@@ -71,11 +83,15 @@
             this.btnHistory.Size = new System.Drawing.Size(166, 37);
             this.btnHistory.TabIndex = 2;
             this.btnHistory.Text = "History";
-            this.btnHistory.UseVisualStyleBackColor = true;
+            this.btnHistory.UseVisualStyleBackColor = false;
             this.btnHistory.Click += new System.EventHandler(this.btnHistory_Click);
             // 
             // btnLog
             // 
+            this.btnLog.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.btnLog.FlatAppearance.BorderColor = System.Drawing.Color.Gold;
+            this.btnLog.FlatAppearance.BorderSize = 2;
+            this.btnLog.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLog.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLog.Location = new System.Drawing.Point(290, 351);
             this.btnLog.Margin = new System.Windows.Forms.Padding(2);
@@ -83,16 +99,19 @@
             this.btnLog.Size = new System.Drawing.Size(166, 37);
             this.btnLog.TabIndex = 3;
             this.btnLog.Text = "Log New Job";
-            this.btnLog.UseVisualStyleBackColor = true;
+            this.btnLog.UseVisualStyleBackColor = false;
             this.btnLog.Click += new System.EventHandler(this.btnLog_Click);
             // 
             // btnBack
             // 
+            this.btnBack.FlatAppearance.BorderColor = System.Drawing.Color.Gold;
+            this.btnBack.FlatAppearance.BorderSize = 2;
+            this.btnBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBack.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBack.Location = new System.Drawing.Point(325, 411);
+            this.btnBack.Location = new System.Drawing.Point(11, 11);
             this.btnBack.Margin = new System.Windows.Forms.Padding(2);
             this.btnBack.Name = "btnBack";
-            this.btnBack.Size = new System.Drawing.Size(85, 30);
+            this.btnBack.Size = new System.Drawing.Size(79, 28);
             this.btnBack.TabIndex = 4;
             this.btnBack.Text = "Back";
             this.btnBack.UseVisualStyleBackColor = true;
@@ -103,7 +122,7 @@
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label4.ForeColor = System.Drawing.Color.Goldenrod;
             this.label4.Location = new System.Drawing.Point(295, 103);
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
@@ -116,7 +135,7 @@
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 35F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label3.ForeColor = System.Drawing.Color.Goldenrod;
             this.label3.Location = new System.Drawing.Point(236, 37);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";

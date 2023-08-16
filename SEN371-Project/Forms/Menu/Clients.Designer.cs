@@ -39,6 +39,10 @@
             // 
             // btnDetails
             // 
+            this.btnDetails.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.btnDetails.FlatAppearance.BorderColor = System.Drawing.Color.Gold;
+            this.btnDetails.FlatAppearance.BorderSize = 2;
+            this.btnDetails.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDetails.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDetails.Location = new System.Drawing.Point(293, 234);
             this.btnDetails.Margin = new System.Windows.Forms.Padding(2);
@@ -46,31 +50,39 @@
             this.btnDetails.Size = new System.Drawing.Size(158, 38);
             this.btnDetails.TabIndex = 0;
             this.btnDetails.Text = "Client Details";
-            this.btnDetails.UseVisualStyleBackColor = true;
+            this.btnDetails.UseVisualStyleBackColor = false;
             this.btnDetails.Click += new System.EventHandler(this.btnDetails_Click);
             // 
             // btnHistory
             // 
+            this.btnHistory.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.btnHistory.FlatAppearance.BorderColor = System.Drawing.Color.Gold;
+            this.btnHistory.FlatAppearance.BorderSize = 2;
+            this.btnHistory.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnHistory.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnHistory.Location = new System.Drawing.Point(324, 276);
             this.btnHistory.Margin = new System.Windows.Forms.Padding(2);
             this.btnHistory.Name = "btnHistory";
-            this.btnHistory.Size = new System.Drawing.Size(99, 38);
+            this.btnHistory.Size = new System.Drawing.Size(110, 38);
             this.btnHistory.TabIndex = 1;
             this.btnHistory.Text = "Call History";
-            this.btnHistory.UseVisualStyleBackColor = true;
+            this.btnHistory.UseVisualStyleBackColor = false;
             this.btnHistory.Click += new System.EventHandler(this.btnHistory_Click);
             // 
             // btnBack
             // 
+            this.btnBack.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.btnBack.FlatAppearance.BorderColor = System.Drawing.Color.Gold;
+            this.btnBack.FlatAppearance.BorderSize = 2;
+            this.btnBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBack.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBack.Location = new System.Drawing.Point(345, 322);
             this.btnBack.Margin = new System.Windows.Forms.Padding(2);
             this.btnBack.Name = "btnBack";
-            this.btnBack.Size = new System.Drawing.Size(54, 27);
+            this.btnBack.Size = new System.Drawing.Size(62, 27);
             this.btnBack.TabIndex = 6;
             this.btnBack.Text = "Back";
-            this.btnBack.UseVisualStyleBackColor = true;
+            this.btnBack.UseVisualStyleBackColor = false;
             this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
             // label4
@@ -78,7 +90,7 @@
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label4.ForeColor = System.Drawing.Color.Goldenrod;
             this.label4.Location = new System.Drawing.Point(290, 110);
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
@@ -91,7 +103,7 @@
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 35F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label3.ForeColor = System.Drawing.Color.Goldenrod;
             this.label3.Location = new System.Drawing.Point(214, 43);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
@@ -101,6 +113,10 @@
             // 
             // btnSLA
             // 
+            this.btnSLA.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.btnSLA.FlatAppearance.BorderColor = System.Drawing.Color.Gold;
+            this.btnSLA.FlatAppearance.BorderSize = 2;
+            this.btnSLA.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSLA.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSLA.Location = new System.Drawing.Point(249, 183);
             this.btnSLA.Margin = new System.Windows.Forms.Padding(2);
@@ -108,7 +124,7 @@
             this.btnSLA.Size = new System.Drawing.Size(251, 38);
             this.btnSLA.TabIndex = 12;
             this.btnSLA.Text = "Service Level Agreement";
-            this.btnSLA.UseVisualStyleBackColor = true;
+            this.btnSLA.UseVisualStyleBackColor = false;
             this.btnSLA.Click += new System.EventHandler(this.btnSLA_Click);
             // 
             // Clients

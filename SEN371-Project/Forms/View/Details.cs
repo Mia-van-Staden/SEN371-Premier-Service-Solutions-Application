@@ -46,7 +46,10 @@ namespace SEN371_Project
         {
             string query = "SELECT * from JobDetails";
             DataTable dt = Database_handler.AdaptSelect(query);
-            dataGridView1.DataSource = dt;
+            if (dt != null)
+            {
+                dataGridView1.DataSource = dt;
+            }
         }
     }
 }
